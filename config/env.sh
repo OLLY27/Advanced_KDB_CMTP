@@ -1,5 +1,5 @@
 #Standard Settings for All Processes
-export ADV_KDB_HOME=${HOME}/Documents/FD_home/AdvancedKDB
+export ADV_KDB_HOME=${HOME}/Advanced_KDB_CMTP
 export QHOME=${HOME}/q
 export Q_OS=m64
 export PROCESS_LOGS=${ADV_KDB_HOME}/logs
