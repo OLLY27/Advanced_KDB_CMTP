@@ -16,7 +16,7 @@ Change directory to Advanced_KDB_CMTP
     
     cd Advanced_KDB_CMTP
    
-Before starting any processes, it is important to configure the environment by adapting AdvancedKDB/config/env.sh. Then set the environment by running the shell script as follows 
+Before starting any processes, it is important to configure the environment by adapting Advanced_KDB_CMTP/config/env.sh. Then set the environment by running the shell script as follows 
 ```sh
 $ ./config/env.sh
 ```
