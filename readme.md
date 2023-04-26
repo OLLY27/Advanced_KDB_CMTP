@@ -2,13 +2,20 @@
 
 ## Clone GIT Repository in GCP Linux Terminal
 
-To clone the repository into your linux envirnoment. run: 
+To clone the repository into your linux envirnoment run: 
 
-git clone https://github.com/OLLY27/Advanced_KDB_CMTP
+    git clone https://github.com/OLLY27/Advanced_KDB_CMTP
+    
+Change your directory permissions so all files are RWX
 
-CHMOD your directory so all files are RWX
+    chmod 777 -R Advanced_KDB_CMTP
 
 ## Exercise 1
+
+Change directory to Advanced_KDB_CMTP
+    
+    cd Advanced_KDB_CMTP
+   
 Before starting any processes, it is important to configure the environment by adapting AdvancedKDB/config/env.sh. Then set the environment by running the shell script as follows 
 ```sh
 $ ./config/env.sh
