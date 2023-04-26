@@ -8,7 +8,7 @@ To clone the repository into your linux envirnoment run:
     
 Change your directory permissions so all files are RWX
 
-    chmod 777 -R Advanced_KDB_CMTP
+    chmod -R 777 Advanced_KDB_CMTP
 
 ## Exercise 1
 
