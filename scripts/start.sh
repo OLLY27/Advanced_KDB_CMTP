@@ -1,8 +1,6 @@
 # Command line options (all, tick, rdb, aggRdb, cep, feed)
 
 #Move to the home folder and run the environment setup script
-. ./config/env.sh
-cd ${ADV_KDB_HOME}
 
 TP_START="nohup ${ADV_KDB_HOME}/processes/tick.q ${Q_SCHEMA} ${TP_LOG_LOCATION} -p ${TP_PORT} -t ${TP_TIMER} </dev/null >> ${PROCESS_LOGS}/tick.log 2>&1 &"
 
