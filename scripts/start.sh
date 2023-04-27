@@ -10,7 +10,7 @@ RDB_START="nohup ${ADV_KDB_HOME}/processes/rdb.q -p ${RDB_PORT} </dev/null >> ${
 
 AGG_RDB_START="nohup ${ADV_KDB_HOME}/processes/aggRdb.q -p ${AGG_PORT} </dev/null >> ${PROCESS_LOGS}/aggRdb.log 2>&1 &"
 
-CEP_START="nohup ${ADV_KDB_HOME}processes/cep.q -p ${CEP_PORT} </dev/null >> ${PROCESS_LOGS}/cep.log 2>&1 &"
+CEP_START="nohup ${ADV_KDB_HOME}/processes/cep.q -p ${CEP_PORT} </dev/null >> ${PROCESS_LOGS}/cep.log 2>&1 &"
 
 FEED_START="nohup ${ADV_KDB_HOME}/processes/feed.q -p ${FEED_PORT} </dev/null >> ${PROCESS_LOGS}/feed.log 2>&1 &"
 
