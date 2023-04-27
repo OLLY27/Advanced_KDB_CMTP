@@ -8,7 +8,7 @@ export CSV_DIR=${ADV_KDB_HOME}/csv
 #Tickerplant Settings
 export TP_PORT=7001
 export TP_LOG_LOCATION=${HOME}/tplog
-export Q_SCHEMA=${ADV_KDB_HOME}/tick/schema.q
+export Q_SCHEMA=schema
 export TP_TIMER=0
 
 #Realtime Database Settings
