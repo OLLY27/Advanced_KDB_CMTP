@@ -13,7 +13,7 @@ args:.Q.def[defaultargs] .Q.opt[.z.x];
 //load in u.q
 \l tick/u.q
 
-//load other libs
+//load other libraries
 \l libs/log.q
 
 // define schema with first command line parameter
