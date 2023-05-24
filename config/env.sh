@@ -9,7 +9,7 @@ export CSV_DIR=${ADV_KDB_HOME}/csv
 export TP_PORT=7001
 export TP_LOG_LOCATION=${ADV_KDB_HOME}/logs/tplog
 export Q_SCHEMA=schema
-export TP_TIMER=0
+export TP_TIMER=1
 
 #Realtime Database Settings
 export RDB_PORT=7002
