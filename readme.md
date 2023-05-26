@@ -1,72 +1,152 @@
-# Advanced KDB
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////     GIT SETUP   /////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
 
-## Clone GIT Repository in GCP Linux Terminal
+To clone the repository into your linux envirnoment. run:
 
-To clone the repository into your linux envirnoment run: 
+git clone https://github.com/rclerkin97/advancedKDB.git
 
-    git clone https://github.com/OLLY27/Advanced_KDB_CMTP
-    
-Change your directory permissions so all files are RWX
+This will create a folder called "advancedKDB"
 
-    chmod -R 777 Advanced_KDB_CMTP
+Set the path to this folder as $advancedKDB using:
 
-## Exercise 1
+export advancedKDB="$(dirname "$dir")"
 
-Change directory to Advanced_KDB_CMTP
-    
-    cd Advanced_KDB_CMTP
-   
-Before starting any processes, it is important to configure the environment by adapting Advanced_KDB_CMTP/config/env.sh. Then set the environment by running the shell script as follows 
-```sh
-$ ./config/env.sh
-```
-Running the processes in Question 1 can be done by running them manually with q, or with the shell scripts.
+/////////////////////////////   Created by Ross Clerkin   /////////////////////////////
+/////////////////////////////     QUESTION 1 - TICK       /////////////////////////////
 
-### Processes
-The following is a list of processes with the commands to start them manually
+/////////////////////////////    PART 1 - TICKER PLANT   /////////////////////////////
 
-Tickerplant:    `q processes/tick.q ${Q_SCHEMA} ${TP_LOG_LOCATION} -p ${TP_PORT} -t ${TP_TIMER}`
+GCP Directory 
+/home/rclerkin_kx_com/submissionV2/advancedKDB
 
-RDB:            `q processes/rdb.q -p ${RDB_PORT}`
+$advancedKDB/tickerplant.q
 
-Aggregate RDB:  `q processes/aggRdb.q -p ${AGG_PORT}`
+Manual Commands to run tickerplant
 
-CEP:            `q processes/cep.q -p ${CEP_PORT}`
+In a linux envirnoment inside "$advancedKDB" run:
 
-Q Feedhandler:  `q processes/feed.q -p ${FEED_PORT}`
+export advancedKDB="$(dirname "$dir")"
+export tpPort=5000
+echo $tpPort
+5000
 
-### Automatic startup and shutdown
-```sh
-$ ./scripts/start.sh all
-$ ./scripts/start.sh tick rdb feed
-```
-The input process can either be `all` or the individual processes `tick`, `rdb`, `cep`, `aggRdb` and `feed`. Note that no processes will start without the tickerplant.
+q $advancedKDB/tickerplant.q sym . -p $tpPort
 
-To check if a process is running you can use the `test.sh` script:
-```sh
-$ ./scripts/test.sh
-```
-The `stop.sh` script works similarly to the `start.sh` script:
-```sh
-$ ./scripts/stop.sh <process>
-```
-### Tickerplant log replay
-To read in a tickerplant log file and filter it so that it creates a new log file based on a filtered sym for the trade table, run the following:
-``` sh
-$ q logReplay.q ${TP_LOG_LOCATION} IBM.N
-```
+___________________________________________________
 
-### CSV File Load
-To load a csv file into the tickerplant, run the following process:
-``` sh
-$ q csvFileLoad.q trade trade.csv
-```
-### EOD Process
-To create a daily partitioned HDB using a log file, run the following process:
-``` sh
-$ q saveToHdb.q ${TP_LOG_LOCATION}/schema2022.01.22 data
-```
-The first parameter is the tickerplant log file and the second is the HDB directory
+/////////////////////////////   PART 2 - RDB   /////////////////////////////
+$advancedKDB/tick/rdbTQ.q
+$advancedKDB/tick/rdbAGG.q
+
+Manual Commands for running the Trade Quote and aggregation RDBs
+
+In a linux envirnoment inside "$advancedKDB" run:
+export advancedKDB="$(dirname "$dir")"
+export tpPort=5000
+echo $tpPort
+5000
+q $advancedKDB/tick/rdbTQ.q localhost:$tpPort
+
+export advancedKDB="$(dirname "$dir")"
+export tpPort=5000
+echo $tpPort
+5000
+q $advancedKDB/tick/rdbAGG.q localhost:$tpPort
+
+___________________________________________________
+
+//////////////////////////   PART 3 - FEED HANDLER  /////////////////////////////
+$advancedKDB/tick/feedHandler.q
+
+Manual Commands to run the Feedhandler
+
+In a seperate linux envirnoment inside "$advancedKDB" run:
+export advancedKDB="$(dirname "$dir")"
+export tpPort=5000
+echo $tpPort
+5000
+q $advancedKDB/tick/feedHandler.q
+
+___________________________________________________
+
+//////////////////////////   PART 4 - CEP  /////////////////////////////
+$advancedKDB/tick/cep.q
+
+Manual Commands to run the Complex Event Processor
+
+In a linux envirnoment inside "$advancedKDB" run:
+export advancedKDB="$(dirname "$dir")"
+export tpPort=5000
+echo $tpPort
+5000
+q $advancedKDB/tick/cep.q localhost:$tpPort
+
+___________________________________________________
+
+//////////////////////////   PART 5 - LOGGING  /////////////////////////////
+$advancedKDB/logging.q
+
+The logging script is here: 
+$advancedKDB/logging.q
+
+The logs themselves are located here:
+$advancedKDB/logs
+
+___________________________________________________
+
+//////////////////////////   PART 6 - STARTUP/SHUTDOWN SCRIPTS  /////////////////////////////
+$advancedKDB/scripts/start.sh
+$advancedKDB/scripts/test.sh
+$advancedKDB/scripts/stop.sh
+
+To use these scripts, first ensure there are no processes running on the port: 5000
+You can always change this port for another in $advancedKDB/scripts/config.sh
+Also in scripts/config.sh, make sure Q (the q home directory) and q (theq executable has been set)
+
+To start the processes run (you will see options for yes or no for what you would like to start):
+bash start.sh
+To stop the processes run  (you will see options for yes or no for what you would like to stop):
+bash stop.sh
+To test the processes run:
+bash test.sh
+
+___________________________________________________
+
+//////////////////////////   PART 7 -TICKERPLANT LOG REPLAY  /////////////////////////////
+$advancedKDB/tpLogReplay.q
+
+The tickerplant logs will be in starting folder
+
+q tpLogReplay.q sym2023.05.03
+
+___________________________________________________
+
+//////////////////////////   PART 8 - CSV FILE LOAD  /////////////////////////////
+$advancedKDB/CSVFileLoader.q
+
+To load a new csv file into the TP
+q CSVReader.q [table] [csv file] [port number]
+
+q CSVFileLoader.q trade trade.csv 5000
+
+___________________________________________________
+
+//////////////////////////   PART 9 - EOD Process  /////////////////////////////
+$advancedKDB/tick/hdbEOD.q
+
+Move into the tick dir: $advancedKDB/tick/
+
+To run the EOD process and update the HDB
+
+Change the sym date in the command to todays date 
+
+q hdbEOD.q ../sym2023.05.03
+
+When using the previously created bash scripts, as the sym dated file will be created in the same directory as the scripts it runs in, the command will look like this:
+
+q hdbEOD.q ../scripts/sym2023.05.10
+___________________________________________________
 
 ### Answer to Exercise 1, Question 10
 
