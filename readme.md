@@ -1,41 +1,36 @@
-///////////////////////////////////////////////////////////////////////////////////////
-///////////////////     GIT SETUP   /////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////
+# GIT SETUP   
+
 
 To clone the repository into your linux envirnoment. run:
-
+``` sh
 git clone https://github.com/rclerkin97/advancedKDB.git
-
+``` 
 This will create a folder called "advancedKDB"
 
 Set the path to this folder as $advancedKDB using:
-
+``` sh
 export advancedKDB="$(dirname "$dir")"
+``` 
 
-/////////////////////////////   Created by Ross Clerkin   /////////////////////////////
-/////////////////////////////     QUESTION 1 - TICK       /////////////////////////////
+## QUESTION 1 - TICK     
 
-/////////////////////////////    PART 1 - TICKER PLANT   /////////////////////////////
-
-GCP Directory 
-/home/rclerkin_kx_com/submissionV2/advancedKDB
-
+### PART 1 - TICKER PLANT  
+``` sh
 $advancedKDB/tickerplant.q
+```
 
 Manual Commands to run tickerplant
 
 In a linux envirnoment inside "$advancedKDB" run:
-
+``` sh
 export advancedKDB="$(dirname "$dir")"
 export tpPort=5000
-echo $tpPort
-5000
 
 q $advancedKDB/tickerplant.q sym . -p $tpPort
-
+```
 ___________________________________________________
 
-/////////////////////////////   PART 2 - RDB   /////////////////////////////
+### PART 2 - RDB 
 $advancedKDB/tick/rdbTQ.q
 $advancedKDB/tick/rdbAGG.q
 
@@ -56,7 +51,7 @@ q $advancedKDB/tick/rdbAGG.q localhost:$tpPort
 
 ___________________________________________________
 
-//////////////////////////   PART 3 - FEED HANDLER  /////////////////////////////
+### PART 3 - FEED HANDLER
 $advancedKDB/tick/feedHandler.q
 
 Manual Commands to run the Feedhandler
@@ -70,7 +65,7 @@ q $advancedKDB/tick/feedHandler.q
 
 ___________________________________________________
 
-//////////////////////////   PART 4 - CEP  /////////////////////////////
+### PART 4 - CEP 
 $advancedKDB/tick/cep.q
 
 Manual Commands to run the Complex Event Processor
@@ -82,9 +77,7 @@ echo $tpPort
 5000
 q $advancedKDB/tick/cep.q localhost:$tpPort
 
-___________________________________________________
-
-//////////////////////////   PART 5 - LOGGING  /////////////////////////////
+### PART 5 - LOGGING  
 $advancedKDB/logging.q
 
 The logging script is here: 
@@ -93,36 +86,37 @@ $advancedKDB/logging.q
 The logs themselves are located here:
 $advancedKDB/logs
 
-___________________________________________________
-
-//////////////////////////   PART 6 - STARTUP/SHUTDOWN SCRIPTS  /////////////////////////////
+### PART 6 - STARTUP/SHUTDOWN SCRIPTS  
+``` sh
 $advancedKDB/scripts/start.sh
 $advancedKDB/scripts/test.sh
 $advancedKDB/scripts/stop.sh
-
+```
 To use these scripts, first ensure there are no processes running on the port: 5000
 You can always change this port for another in $advancedKDB/scripts/config.sh
 Also in scripts/config.sh, make sure Q (the q home directory) and q (theq executable has been set)
 
 To start the processes run (you will see options for yes or no for what you would like to start):
+``` sh
 bash start.sh
+```
 To stop the processes run  (you will see options for yes or no for what you would like to stop):
+``` sh
 bash stop.sh
+``` 
 To test the processes run:
+``` sh
 bash test.sh
+``` 
 
-___________________________________________________
-
-//////////////////////////   PART 7 -TICKERPLANT LOG REPLAY  /////////////////////////////
+### PART 7 -TICKERPLANT LOG REPLAY 
 $advancedKDB/tpLogReplay.q
 
 The tickerplant logs will be in starting folder
 
 q tpLogReplay.q sym2023.05.03
 
-___________________________________________________
-
-//////////////////////////   PART 8 - CSV FILE LOAD  /////////////////////////////
+### PART 8 - CSV FILE LOAD 
 $advancedKDB/CSVFileLoader.q
 
 To load a new csv file into the TP
@@ -130,9 +124,7 @@ q CSVReader.q [table] [csv file] [port number]
 
 q CSVFileLoader.q trade trade.csv 5000
 
-___________________________________________________
-
-//////////////////////////   PART 9 - EOD Process  /////////////////////////////
+### PART 9 - EOD Process 
 $advancedKDB/tick/hdbEOD.q
 
 Move into the tick dir: $advancedKDB/tick/
