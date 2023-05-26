@@ -32,9 +32,10 @@ q $Advanced_KDB_CMTP/tickerplant.q sym . -p $tpPort
 ___________________________________________________
 
 ### PART 2 - RDB 
+``` sh
 $Advanced_KDB_CMTP/tick/rdbTQ.q
 $Advanced_KDB_CMTP/tick/rdbAGG.q
-
+```
 Manual Commands for running the Trade Quote and aggregation RDBs
 
 In a linux envirnoment inside "$Advanced_KDB_CMTP" run:
