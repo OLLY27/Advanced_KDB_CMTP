@@ -17,15 +17,15 @@ FEED_START="nohup q processes/feed.q -p ${FEED_PORT} </dev/null >> ${PROCESS_LOG
 # Command line options (all, tick, rdb, aggRdb, cep, feed)
 if [[ "$@[*]" =~ "all" ]]; then  
     echo $TP_START
-    eval ($TP_START)
+    eval $TP_START
     echo $RDB_START
-    eval ($RDB_START)
+    eval $RDB_START
     echo $AGG_RDB_START
-    eval ($AGG_RDB_START)
+    eval $AGG_RDB_START
     echo $CEP_START
-    eval ($CEP_START)
+    eval $CEP_START
     echo $FEED_START
-    eval ($FEED_START)
+    eval $FEED_START
 else
     if [[ "$@[*]" =~ "tick" ]]; then
         echo $TP_START
