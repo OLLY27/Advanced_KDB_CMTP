@@ -4,7 +4,7 @@
 \p 7006
 .z.ws:{neg[.z.w] .Q.s[select from trade where sym=`$x]};
 
-system raze["l ",getenv[`advancedKDB],"/logging.q"]
+system raze["l ",getenv[`Advanced_KDB_CMTP],"/logging.q"]
 
 if[not "w"=first string .z.o;system "sleep 1"];
 
