@@ -37,18 +37,15 @@ $advancedKDB/tick/rdbAGG.q
 Manual Commands for running the Trade Quote and aggregation RDBs
 
 In a linux envirnoment inside "$advancedKDB" run:
+``` sh
 export advancedKDB="$(dirname "$dir")"
 export tpPort=5000
-echo $tpPort
-5000
 q $advancedKDB/tick/rdbTQ.q localhost:$tpPort
 
 export advancedKDB="$(dirname "$dir")"
 export tpPort=5000
-echo $tpPort
-5000
 q $advancedKDB/tick/rdbAGG.q localhost:$tpPort
-
+``` 
 ___________________________________________________
 
 ### PART 3 - FEED HANDLER
@@ -57,12 +54,11 @@ $advancedKDB/tick/feedHandler.q
 Manual Commands to run the Feedhandler
 
 In a seperate linux envirnoment inside "$advancedKDB" run:
+``` sh
 export advancedKDB="$(dirname "$dir")"
 export tpPort=5000
-echo $tpPort
-5000
 q $advancedKDB/tick/feedHandler.q
-
+```
 ___________________________________________________
 
 ### PART 4 - CEP 
@@ -71,17 +67,18 @@ $advancedKDB/tick/cep.q
 Manual Commands to run the Complex Event Processor
 
 In a linux envirnoment inside "$advancedKDB" run:
+``` sh
 export advancedKDB="$(dirname "$dir")"
 export tpPort=5000
-echo $tpPort
-5000
 q $advancedKDB/tick/cep.q localhost:$tpPort
-
+```
 ### PART 5 - LOGGING  
 $advancedKDB/logging.q
 
 The logging script is here: 
+``` sh
 $advancedKDB/logging.q
+```
 
 The logs themselves are located here:
 $advancedKDB/logs
@@ -113,9 +110,9 @@ bash test.sh
 $advancedKDB/tpLogReplay.q
 
 The tickerplant logs will be in starting folder
-
+``` sh
 q tpLogReplay.q sym2023.05.03
-
+``` 
 ### PART 8 - CSV FILE LOAD 
 $advancedKDB/CSVFileLoader.q
 
@@ -132,13 +129,13 @@ Move into the tick dir: $advancedKDB/tick/
 To run the EOD process and update the HDB
 
 Change the sym date in the command to todays date 
-
-q hdbEOD.q ../sym2023.05.03
-
+``` sh
+q hdbEOD.q ../sym2023.05.26
+``` 
 When using the previously created bash scripts, as the sym dated file will be created in the same directory as the scripts it runs in, the command will look like this:
-
-q hdbEOD.q ../scripts/sym2023.05.10
-___________________________________________________
+``` sh
+q hdbEOD.q ../scripts/sym2023.05.25
+```
 
 ### Answer to Exercise 1, Question 10
 
