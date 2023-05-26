@@ -9,7 +9,7 @@ export CSV_DIR=csv
 export TP_PORT=7001
 export TP_LOG_LOCATION=logs/tplog
 export Q_SCHEMA=schema
-export TP_TIMER=1
+export TP_TIMER=0
 
 #Realtime Database Settings
 export RDB_PORT=7002
