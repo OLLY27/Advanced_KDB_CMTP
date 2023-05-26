@@ -2,7 +2,7 @@
 
 h:neg hopen hsym `$(raze[("localhost:",getenv[`tpPort])]) /connect to tickerplant
 
-system raze["l ",getenv[`advancedKDB],"/logging.q"]
+system raze["l ",getenv[`Advanced_KDB_CMTP],"/logging.q"]
 
 syms:`MSFT.O`IBM.N`GS.N`BA.N`VOD.L /stocks
 
