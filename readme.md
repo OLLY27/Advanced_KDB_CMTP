@@ -7,9 +7,10 @@ git clone https://github.com/OLLY27/Advanced_KDB_CMTP
 ``` 
 This will create a folder called "Advanced_KDB_CMTP"
 
-Set the path to this folder as $Advanced_KDB_CMTP using:
+Set the path to this folder as $Advanced_KDB_CMTP using and change permissions:
 ``` sh
 export Advanced_KDB_CMTP="$(dirname "$dir")"
+chmod 777 -R Advanced_KDB_CMTP
 ``` 
 
 ## QUESTION 1 - TICK     
