@@ -2,7 +2,7 @@
 /2008.09.09 .k ->.q
 h:neg hopen hsym `$(raze[("localhost:",getenv[`tpPort])])
 
-system raze["l ",getenv[`advancedKDB],"/logging.q"]
+system raze["l ",getenv[`Advanced_KDB_CMTP],"/logging.q"]
 
 if[not "w"=first string .z.o;system "sleep 1"];
 
