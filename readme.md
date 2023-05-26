@@ -50,8 +50,9 @@ q $Advanced_KDB_CMTP/tick/rdbAGG.q localhost:$tpPort
 ___________________________________________________
 
 ### PART 3 - FEED HANDLER
+``` sh
 $Advanced_KDB_CMTP/tick/feedHandler.q
-
+``` 
 Manual Commands to run the Feedhandler
 
 In a seperate linux envirnoment inside "$Advanced_KDB_CMTP" run:
@@ -63,8 +64,9 @@ q $Advanced_KDB_CMTP/tick/feedHandler.q
 ___________________________________________________
 
 ### PART 4 - CEP 
+``` sh
 $Advanced_KDB_CMTP/tick/cep.q
-
+``` 
 Manual Commands to run the Complex Event Processor
 
 In a linux envirnoment inside "$Advanced_KDB_CMTP" run:
@@ -74,8 +76,9 @@ export tpPort=5000
 q $Advanced_KDB_CMTP/tick/cep.q localhost:$tpPort
 ```
 ### PART 5 - LOGGING  
+``` sh
 $Advanced_KDB_CMTP/logging.q
-
+``` 
 The logging script is here: 
 ``` sh
 $advancedKAdvanced_KDB_CMTPDB/logging.q
@@ -108,8 +111,9 @@ bash test.sh
 ``` 
 
 ### PART 7 -TICKERPLANT LOG REPLAY 
+``` sh
 $Advanced_KDB_CMTP/tpLogReplay.q
-
+``` 
 The tickerplant logs will be in starting folder
 ``` sh
 q tpLogReplay.q sym2023.05.03
