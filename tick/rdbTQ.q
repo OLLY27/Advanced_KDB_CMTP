@@ -12,7 +12,7 @@ if[not "w"=first string .z.o;system "sleep 1"];
 upd:{if[x in `trade`quote; x insert y]}
 
 / get the ticker plant and history ports, defaults are 5010,5012
-.u.x:.z.x,(count .z.x)_(":5000";":5012");
+.u.x:.z.x,(count .z.x)_(":5010";":5012");
 
 / end of day function: save, clear, hdb reload work
 .u.end:{t:tables`.;t@:where `g=attr each t@\:`sym;.Q.hdpf[`$":",.u.x 1;`:.;x;`sym];@[;`sym;`g#] each t;};
