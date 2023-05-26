@@ -3,94 +3,94 @@
 
 To clone the repository into your linux envirnoment. run:
 ``` sh
-git clone https://github.com/rclerkin97/advancedKDB.git
+git clone https://github.com/OLLY27/Advanced_KDB_CMTP
 ``` 
-This will create a folder called "advancedKDB"
+This will create a folder called "Advanced_KDB_CMTP"
 
-Set the path to this folder as $advancedKDB using:
+Set the path to this folder as $Advanced_KDB_CMTP using:
 ``` sh
-export advancedKDB="$(dirname "$dir")"
+export Advanced_KDB_CMTP="$(dirname "$dir")"
 ``` 
 
 ## QUESTION 1 - TICK     
 
 ### PART 1 - TICKER PLANT  
 ``` sh
-$advancedKDB/tickerplant.q
+$Advanced_KDB_CMTP/tickerplant.q
 ```
 
 Manual Commands to run tickerplant
 
-In a linux envirnoment inside "$advancedKDB" run:
+In a linux envirnoment inside "$Advanced_KDB_CMTP" run:
 ``` sh
-export advancedKDB="$(dirname "$dir")"
+export Advanced_KDB_CMTP="$(dirname "$dir")"
 export tpPort=5000
 
-q $advancedKDB/tickerplant.q sym . -p $tpPort
+q $Advanced_KDB_CMTP/tickerplant.q sym . -p $tpPort
 ```
 ___________________________________________________
 
 ### PART 2 - RDB 
-$advancedKDB/tick/rdbTQ.q
-$advancedKDB/tick/rdbAGG.q
+$Advanced_KDB_CMTP/tick/rdbTQ.q
+$Advanced_KDB_CMTP/tick/rdbAGG.q
 
 Manual Commands for running the Trade Quote and aggregation RDBs
 
-In a linux envirnoment inside "$advancedKDB" run:
+In a linux envirnoment inside "$Advanced_KDB_CMTP" run:
 ``` sh
-export advancedKDB="$(dirname "$dir")"
+export Advanced_KDB_CMTP="$(dirname "$dir")"
 export tpPort=5000
-q $advancedKDB/tick/rdbTQ.q localhost:$tpPort
+q $Advanced_KDB_CMTP/tick/rdbTQ.q localhost:$tpPort
 
-export advancedKDB="$(dirname "$dir")"
+export Advanced_KDB_CMTP="$(dirname "$dir")"
 export tpPort=5000
-q $advancedKDB/tick/rdbAGG.q localhost:$tpPort
+q $Advanced_KDB_CMTP/tick/rdbAGG.q localhost:$tpPort
 ``` 
 ___________________________________________________
 
 ### PART 3 - FEED HANDLER
-$advancedKDB/tick/feedHandler.q
+$Advanced_KDB_CMTP/tick/feedHandler.q
 
 Manual Commands to run the Feedhandler
 
-In a seperate linux envirnoment inside "$advancedKDB" run:
+In a seperate linux envirnoment inside "$Advanced_KDB_CMTP" run:
 ``` sh
-export advancedKDB="$(dirname "$dir")"
+export Advanced_KDB_CMTP="$(dirname "$dir")"
 export tpPort=5000
-q $advancedKDB/tick/feedHandler.q
+q $Advanced_KDB_CMTP/tick/feedHandler.q
 ```
 ___________________________________________________
 
 ### PART 4 - CEP 
-$advancedKDB/tick/cep.q
+$Advanced_KDB_CMTP/tick/cep.q
 
 Manual Commands to run the Complex Event Processor
 
-In a linux envirnoment inside "$advancedKDB" run:
+In a linux envirnoment inside "$Advanced_KDB_CMTP" run:
 ``` sh
-export advancedKDB="$(dirname "$dir")"
+export Advanced_KDB_CMTP="$(dirname "$dir")"
 export tpPort=5000
-q $advancedKDB/tick/cep.q localhost:$tpPort
+q $Advanced_KDB_CMTP/tick/cep.q localhost:$tpPort
 ```
 ### PART 5 - LOGGING  
-$advancedKDB/logging.q
+$Advanced_KDB_CMTP/logging.q
 
 The logging script is here: 
 ``` sh
-$advancedKDB/logging.q
+$advancedKAdvanced_KDB_CMTPDB/logging.q
 ```
 
 The logs themselves are located here:
-$advancedKDB/logs
+$Advanced_KDB_CMTP/logs
 
 ### PART 6 - STARTUP/SHUTDOWN SCRIPTS  
 ``` sh
-$advancedKDB/scripts/start.sh
-$advancedKDB/scripts/test.sh
-$advancedKDB/scripts/stop.sh
+$Advanced_KDB_CMTP/scripts/start.sh
+$Advanced_KDB_CMTP/scripts/test.sh
+$Advanced_KDB_CMTP/scripts/stop.sh
 ```
 To use these scripts, first ensure there are no processes running on the port: 5000
-You can always change this port for another in $advancedKDB/scripts/config.sh
+You can always change this port for another in $Advanced_KDB_CMTP/scripts/config.sh
 Also in scripts/config.sh, make sure Q (the q home directory) and q (theq executable has been set)
 
 To start the processes run (you will see options for yes or no for what you would like to start):
@@ -107,14 +107,14 @@ bash test.sh
 ``` 
 
 ### PART 7 -TICKERPLANT LOG REPLAY 
-$advancedKDB/tpLogReplay.q
+$Advanced_KDB_CMTP/tpLogReplay.q
 
 The tickerplant logs will be in starting folder
 ``` sh
 q tpLogReplay.q sym2023.05.03
 ``` 
 ### PART 8 - CSV FILE LOAD 
-$advancedKDB/CSVFileLoader.q
+$Advanced_KDB_CMTP/CSVFileLoader.q
 
 To load a new csv file into the TP
 q CSVReader.q [table] [csv file] [port number]
@@ -122,9 +122,9 @@ q CSVReader.q [table] [csv file] [port number]
 q CSVFileLoader.q trade trade.csv 5000
 
 ### PART 9 - EOD Process 
-$advancedKDB/tick/hdbEOD.q
+$Advanced_KDB_CMTP/tick/hdbEOD.q
 
-Move into the tick dir: $advancedKDB/tick/
+Move into the tick dir: $Advanced_KDB_CMTP/tick/
 
 To run the EOD process and update the HDB
 
