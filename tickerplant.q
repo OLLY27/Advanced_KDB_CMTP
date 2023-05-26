@@ -1,12 +1,12 @@
 / q tick.q sym . -p 5011 1>>tick.log 2>&1 &
 /q tick.q SRC [DST] [-p 5010] [-o h]
 
-system raze["l ",getenv[`advancedKDB],"/tick/sym.q"]
-system"l ",getenv[`advancedKDB],"/tick/",(src:first .z.x,enlist"sym"),".q"
+system raze["l ",getenv[`Advanced_KDB_CMTP],"/tick/sym.q"]
+system"l ",getenv[`Advanced_KDB_CMTP],"/tick/",(src:first .z.x,enlist"sym"),".q"
 
 if[not system"p";system"p 5010"]
-system raze["l ",getenv[`advancedKDB],"/logging.q"]
-system raze["l ",getenv[`advancedKDB],"/tick/u.q"]
+system raze["l ",getenv[`Advanced_KDB_CMTP],"/logging.q"]
+system raze["l ",getenv[`Advanced_KDB_CMTP],"/tick/u.q"]
 
 \d .log
 .log.a::0;
