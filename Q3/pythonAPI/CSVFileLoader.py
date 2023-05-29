@@ -4,8 +4,8 @@ from qpython import qconnection
 from qpython.qcollection import qlist
 from qpython.qtype import QException, QTIME_LIST, QSYMBOL_LIST, QFLOAT_LIST, QLONG_LIST
 
-with qconnection.QConnection(host='localhost', port=5000) as q:
-    with open("C:/Users/rossc/OneDrive/Desktop/Advanced-kdb-files-Ross/advancedKDB-main/Q3/pythonAPI/trade.csv", "r") as f:
+with qconnection.QConnection(host='localhost', port=5010) as q:
+    with open("/home/woliver_kx_com/Advanced_KDB_CMTP/Q3/pythonAPI", "r") as f:
         reader = csv.reader(f, delimiter=",")
         for line in enumerate(reader):
             if (line[1][0] == 'time'):
