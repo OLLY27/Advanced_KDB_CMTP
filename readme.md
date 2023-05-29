@@ -98,15 +98,15 @@ To use these scripts, first ensure there are no processes running on the port: 5
 You can always change this port for another in $Advanced_KDB_CMTP/scripts/config.sh
 Also in scripts/config.sh, make sure Q (the q home directory) and q (theq executable has been set)
 
-To start the processes run (you will see options for yes or no for what you would like to start):
+To start the processes run change to the scripts directory (you will see options for yes or no for what you would like to start):
 ``` sh
 bash start.sh
 ```
-To stop the processes run  (you will see options for yes or no for what you would like to stop):
+To stop the processes run change to the scripts directory  (you will see options for yes or no for what you would like to stop):
 ``` sh
 bash stop.sh
 ``` 
-To test the processes run:
+To test the processes change to the scripts directory and run:
 ``` sh
 bash test.sh
 ``` 
