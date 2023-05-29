@@ -5,7 +5,7 @@
 #nohup q tick/cep.q localhost:5011 1>>cep.log 2>&1 &
 #nohup q tick/rdbAGG.q localhost:5011 1>>rAGG.log 2>&1 &
 
-source ./scripts/config.sh
+source ./config.sh
 
 #Start tickerplant process
 echo "Enter y to run the Tickerplant, (y/n)"
