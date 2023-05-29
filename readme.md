@@ -157,7 +157,7 @@ Sequence to update the schema:
 The solutions to each question in Exercise 2 are in txt files in the `exercise2` directory
 
 ## Exercise 3
-For all of the feeds to work, the tickerplant must be running
+For the feed to work, the tickerplant must be running
 ### Python Feed
  The python script is named CSVFileLoader.py
 The CSV containing the updates is named trade.csv
