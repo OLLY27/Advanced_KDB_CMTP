@@ -159,21 +159,23 @@ The solutions to each question in Exercise 2 are in txt files in the `exercise2`
 ## Exercise 3
 For all of the feeds to work, the tickerplant must be running
 ### Python Feed
-To run the Python feedhandler, run the following command
-``` sh
-$ pyq exercise3/python/pythonAPI.py trade.csv
-```
-Note that python3 and pyq must be installed beforehand
+ The python script is named CSVFileLoader.py
+The CSV containing the updates is named trade.csv
+Examples of updates to the trade table:
 
-### Java Feed
-To run the Java feedhandler, run the following command
-``` sh
-$ java exercise3/java/CsvApi
-```
+time	                sym	price	        size
+0D20:00:55.448628000	FDP	146.2345	700
+0D20:01:05.447662000	KX	64.1267	        333
 
-### Websocket
-Start the websocket process
-``` sh
-$ q exercise3/html/q/websocket.q -p 7013
-```
-Connect from the browser by navigating to `${ADV_KDB_HOME}/exercise3/html/index.html`
+You can adjust the python loader script to change the hostname, port and csv filepath to match the setup you have been using inside: 
+$Advanced_KDB_CMTP/Q3/pythonAPI/CSVFileLoader.py
+In lines 7 and 8.
+
+To run the API
+python CSVFileLoader.py
+
+### Websocket - HTML 5
+
+With the tickerplant and trade quote rdb running, edit the hostname to the one you are using in: $Advanced_KDB_CMTP/Q3/webInterface/simpleWebPage.html
+
+Open simpleWebPage.html in a browser, connect and type in the name of the ticker you are searching for e.g. KX
