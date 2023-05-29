@@ -8,19 +8,24 @@ system raze["l ",getenv[`Advanced_KDB_CMTP],"/logging.q"]
 
 if[not "w"=first string .z.o;system "sleep 1"];
 
-/upd:{if[x=`aggregation; x insert y]}
-upd:{if[x in `trade`quote; x insert y]}
+/a simple insert as the ups function (Vanilla RTS)
+upd:{[t;d] if[t~`aggregate;delete from t;t insert d]};
 
-/ get the ticker plant and history ports, defaults are 5010,5012
-.u.x:.z.x,(count .z.x)_(":5010";":5012");
-
-/ end of day function: save, clear, hdb reload work
-.u.end:{t:tables`.;t@:where `g=attr each t@\:`sym;.Q.hdpf[`$":",.u.x 1;`:.;x;`sym];@[;`sym;`g#] each t;};
+/ end of day: save, clear, hdb reload
+.u.end:{t:tables`.;
+        t@:where `g=attr each t@\:`sym;
+        .Q.hdpf[`$":",.u.x 1;`:.;x;`sym];
+        @[;`sym;`g#] each t;};
 
 / init schema and sync up from log file;cd to hdb(so client save can run)
-.u.rep:{(.[;();:;].)each x;if[null first y;:()];-11!y;system "cd ",1_-10_string first reverse y};
-/ HARDCODE \cd if other than logdir/db
+.u.rep:{(.[;();:;].)each enlist x;if[null first y;:()];-11!y};
 
-/ connecting to the ticker plant for (schema;(logcount;log))
-.u.rep .(hopen `$":",.u.x 0)"((.u.sub[`quote;`];.u.sub[`trade;`]);`.u `i`L)";
 
+/ Open connection to the TP and subscribe to the relevant schemas
+/.u.rep .(hopen `$":",.u.x 0)"(.u.sub[`aggregate;`];`.u `i`L)";
+
+
+h: hopen `$":",.z.x 0;
+(.[;();:;].)each enlist h"(.u.sub[`aggregate;`])";
+if[null first h"(`.u `i`L)";:()];
+-11!h".u.L";
