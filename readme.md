@@ -94,7 +94,7 @@ $Advanced_KDB_CMTP/scripts/start.sh
 $Advanced_KDB_CMTP/scripts/test.sh
 $Advanced_KDB_CMTP/scripts/stop.sh
 ```
-To use these scripts, first ensure there are no processes running on the port: 5000
+To use these scripts, first ensure there are no processes running on the port: 5010
 You can always change this port for another in $Advanced_KDB_CMTP/scripts/config.sh
 Also in scripts/config.sh, make sure Q (the q home directory) and q (theq executable has been set)
 
