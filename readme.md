@@ -25,7 +25,7 @@ Manual Commands to run tickerplant
 In a linux envirnoment inside "$Advanced_KDB_CMTP" run:
 ``` sh
 export Advanced_KDB_CMTP="$(dirname "$dir")"
-export tpPort=5000
+export tpPort=5010
 
 q $Advanced_KDB_CMTP/tickerplant.q sym . -p $tpPort
 ```
@@ -41,11 +41,11 @@ Manual Commands for running the Trade Quote and aggregation RDBs
 In a linux envirnoment inside "$Advanced_KDB_CMTP" run:
 ``` sh
 export Advanced_KDB_CMTP="$(dirname "$dir")"
-export tpPort=5000
+export tpPort=5010
 q $Advanced_KDB_CMTP/tick/rdbTQ.q localhost:$tpPort
 
 export Advanced_KDB_CMTP="$(dirname "$dir")"
-export tpPort=5000
+export tpPort=5010
 q $Advanced_KDB_CMTP/tick/rdbAGG.q localhost:$tpPort
 ``` 
 ___________________________________________________
@@ -59,7 +59,7 @@ Manual Commands to run the Feedhandler
 In a seperate linux envirnoment inside "$Advanced_KDB_CMTP" run:
 ``` sh
 export Advanced_KDB_CMTP="$(dirname "$dir")"
-export tpPort=5000
+export tpPort=5010
 q $Advanced_KDB_CMTP/tick/feedHandler.q
 ```
 ___________________________________________________
@@ -73,7 +73,7 @@ Manual Commands to run the Complex Event Processor
 In a linux envirnoment inside "$Advanced_KDB_CMTP" run:
 ``` sh
 export Advanced_KDB_CMTP="$(dirname "$dir")"
-export tpPort=5000
+export tpPort=5010
 q $Advanced_KDB_CMTP/tick/cep.q localhost:$tpPort
 ```
 ### PART 5 - LOGGING  
@@ -125,7 +125,7 @@ $Advanced_KDB_CMTP/CSVFileLoader.q
 To load a new csv file into the TP
 q CSVReader.q [table] [csv file] [port number]
 ``` sh
-q CSVFileLoader.q trade trade.csv 5000
+q CSVFileLoader.q trade trade.csv 5010
 ``` 
 ### PART 9 - EOD Process 
 $Advanced_KDB_CMTP/tick/hdbEOD.q
