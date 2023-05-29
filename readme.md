@@ -161,19 +161,15 @@ For all of the feeds to work, the tickerplant must be running
 ### Python Feed
  The python script is named CSVFileLoader.py
 The CSV containing the updates is named trade.csv
-Examples of updates to the trade table:
-
-time	                sym	price	        size
-0D20:00:55.448628000	FDP	146.2345	700
-0D20:01:05.447662000	KX	64.1267	        333
 
 You can adjust the python loader script to change the hostname, port and csv filepath to match the setup you have been using inside: 
 $Advanced_KDB_CMTP/Q3/pythonAPI/CSVFileLoader.py
 In lines 7 and 8.
 
 To run the API
+```sh
 python CSVFileLoader.py
-
+```
 ### Websocket - HTML 5
 
 With the tickerplant and trade quote rdb running, edit the hostname to the one you are using in: $Advanced_KDB_CMTP/Q3/webInterface/simpleWebPage.html
