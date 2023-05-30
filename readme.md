@@ -129,9 +129,9 @@ q CSVFileLoader.q trade trade.csv 5011
 ``` 
 ### PART 9 - EOD Process 
 $Advanced_KDB_CMTP/tick/hdbEOD.q
-
+```sh
 Move into the tick dir: $Advanced_KDB_CMTP/tick/
-
+```
 To run the EOD process and update the HDB
 
 Change the sym date in the command to todays date 
