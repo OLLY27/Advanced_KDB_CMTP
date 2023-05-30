@@ -158,17 +158,17 @@ The solutions to each question in Exercise 2 are in txt files in the `exercise2`
 
 ## Exercise 3
 For the feed to work, the tickerplant must be running
-### Python Feed
- The python script is named CSVFileLoader.py
-The CSV containing the updates is named trade.csv
+### Java Feed
+For the java API navigate to:
 
-You can adjust the python loader script to change the hostname, port and csv filepath to match the setup you have been using inside: 
-$Advanced_KDB_CMTP/Q3/pythonAPI/CSVFileLoader.py
-In lines 7 and 8.
+Advanced_KDB_CMTP/Q3/javaApi/
 
-To run the API
+Change the hostname and port and csv filepath to match the setup you have been using in Advanced_KDB_CMTP/Q3/javaApi/src/main/java/kx/examples/Feed.java
 ```sh
-python CSVFileLoader.py
+mkdir -p build/classes
+javac -d build/classes src/main/java/kx/c.java
+javac -d build/classes -cp build/classes src/main/java/kx/examples/Feed.java
+java -cp build/classes kx.examples.Feed
 ```
 ### Websocket - HTML 5
 
