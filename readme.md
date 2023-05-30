@@ -136,11 +136,11 @@ To run the EOD process and update the HDB
 
 Change the sym date in the command to todays date 
 ``` sh
-q hdbEOD.q ../sym2023.05.26
+q hdbEOD.q ../sym2023.05.30
 ``` 
 When using the previously created bash scripts, as the sym dated file will be created in the same directory as the scripts it runs in, the command will look like this:
 ``` sh
-q hdbEOD.q ../scripts/sym2023.05.25
+q hdbEOD.q ../scripts/sym2023.05.29
 ```
 
 ### Answer to Exercise 1, Question 10
