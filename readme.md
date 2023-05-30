@@ -115,7 +115,7 @@ bash test.sh
 ``` sh
 $Advanced_KDB_CMTP/tpLogReplay.q
 ``` 
-The tickerplant logs will be in starting folder
+The tickerplant logs will be in starting folder, be sure to change the date to todays date 
 ``` sh
 q tpLogReplay.q sym2023.05.30
 ``` 
