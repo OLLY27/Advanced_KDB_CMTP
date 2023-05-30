@@ -117,7 +117,7 @@ $Advanced_KDB_CMTP/tpLogReplay.q
 ``` 
 The tickerplant logs will be in starting folder
 ``` sh
-q tpLogReplay.q sym2023.05.03
+q tpLogReplay.q sym2023.05.30
 ``` 
 ### PART 8 - CSV FILE LOAD 
 $Advanced_KDB_CMTP/CSVFileLoader.q
