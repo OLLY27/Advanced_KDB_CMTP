@@ -160,9 +160,9 @@ The solutions to each question in Exercise 2 are in txt files in the `exercise2`
 For the feed to work, the tickerplant must be running
 ### Java Feed
 For the java API navigate to:
-
-Advanced_KDB_CMTP/Q3/javaApi/
-
+```sh
+cd Advanced_KDB_CMTP/Q3/javaApi/
+```
 Change the hostname and port and csv filepath to match the setup you have been using in Advanced_KDB_CMTP/Q3/javaApi/src/main/java/kx/examples/Feed.java
 ```sh
 mkdir -p build/classes
