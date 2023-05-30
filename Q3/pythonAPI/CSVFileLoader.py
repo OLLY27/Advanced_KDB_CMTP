@@ -1,5 +1,6 @@
 import csv
 import numpy as np
+import qpython 
 from qpython import qconnection
 from qpython.qcollection import qlist
 from qpython.qtype import QException, QTIME_LIST, QSYMBOL_LIST, QFLOAT_LIST, QLONG_LIST
