@@ -76,7 +76,7 @@ public class Feed{
   public static void main(String[] args){// example tick feed
     c c=null;
     try{
-      c=new c("localhost",5010);
+      c=new c("localhost",5011);
         String csvFile = "trade.csv";
       rowInserts(c,csvFile);
           }
