@@ -123,9 +123,9 @@ q tpLogReplay.q sym2023.05.30
 $Advanced_KDB_CMTP/CSVFileLoader.q
 
 To load a new csv file into the TP
-q CSVReader.q [table] [csv file] [port number]
+q CSVReader.q [table] [csv file] [RDB port number]
 ``` sh
-q CSVFileLoader.q trade trade.csv 5010
+q CSVFileLoader.q trade trade.csv 5011
 ``` 
 ### PART 9 - EOD Process 
 $Advanced_KDB_CMTP/tick/hdbEOD.q
