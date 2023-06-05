@@ -1,7 +1,7 @@
 /q tick/r.q [host]:port[:usr:pwd] [host]:port[:usr:pwd]
 /2008.09.09 .k ->.q
 
-\p 5011
+\p 7004
 .z.ws:{neg[.z.w] .Q.s[select from trade where sym=`$x]};
 
 system raze["l ",getenv[`Advanced_KDB_CMTP],"/logging.q"]
