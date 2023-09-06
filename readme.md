@@ -172,6 +172,12 @@ java -cp build/classes kx.examples.Feed
 ```
 ### Websocket - HTML 5
 
+Note: the following needs to be run on a local host (not GCP) and not on an FD laptop (a personal one). 
+
 With the tickerplant and trade quote rdb running, edit the hostname to the one you are using in: $Advanced_KDB_CMTP/Q3/webInterface/simpleWebPage.html
 
-Open simpleWebPage.html in a browser, connect and type in the name of the ticker you are searching for e.g. KX
+Open simpleWebPage.html in a browser (Chrome or Edge), connect (to the RDB) and type in the name of the ticker you are searching (for e.g. KX or GS.N) and click send and results will be returned. 
+
+The connection can then be closed and when closed it will return no results.
+
+
