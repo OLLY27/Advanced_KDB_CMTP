@@ -172,7 +172,7 @@ java -cp build/classes kx.examples.Feed
 ```
 ### Websocket - HTML 5
 
-# Note: the following needs to be run on a local host (not GCP) and not on an FD laptop (a personal one). 
+#### Note: the following needs to be run on a local host (not GCP) and not on an FD laptop (a personal one). 
 
 With the tickerplant and trade quote rdb running, edit the hostname to the one you are using in: 
 ```sh
