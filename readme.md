@@ -180,6 +180,7 @@ $Advanced_KDB_CMTP/Q3/webInterface/simpleWebPage.html
 ```
 
 Open simpleWebPage.html in a browser (Chrome or Edge), connect (to the RDB) and type in the name of the ticker you are searching (for e.g. KX or GS.N) and click send and results will be returned. 
+The results returned will be in the format of a table from the RDB and reflect the desired ticker you have searched for.
 
 The connection can then be closed and when closed it will return no results.
 
