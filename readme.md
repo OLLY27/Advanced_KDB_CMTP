@@ -180,10 +180,12 @@ $Advanced_KDB_CMTP/Q3/webInterface/simpleWebPage.html
 ```
 
 Open simpleWebPage.html in a browser (Chrome or Edge). 
+
 ![Screenshot 2023-09-08 094018](https://github.com/OLLY27/Advanced_KDB_CMTP/assets/127981767/6bb42f71-ca89-4071-93b1-e79604278f57)
 
 Connect (to the RDB) and type in the name of the ticker you are searching (for e.g. KX or GS.N) and click send and results will be returned. 
 The results returned will be in the format of a table from the RDB and reflect the desired ticker you have searched for.
+
 ![Screenshot 2023-09-08 094520](https://github.com/OLLY27/Advanced_KDB_CMTP/assets/127981767/10b046b8-c45d-4fde-989c-df41ceec829a)
 
 
